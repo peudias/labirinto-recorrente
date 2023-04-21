@@ -331,6 +331,8 @@ void createRelatorio(Player *p){
         fprintf(file, "|                                                                          |\n");
         fprintf(file, "| => Quantidade total de matrizes:                  [%3d ]                 |\n", p->qtdTotal);
         fprintf(file, "|                                                                          |\n");
+        fprintf(file, "| => Quantidade de vida do player:                  [%3d ]                 |\n", p->vida);
+        fprintf(file, "|                                                                          |\n");
         fprintf(file, "|==========================================================================|");
     }
     fclose(file);

@@ -144,7 +144,8 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
 
                         if(p->vida == 0){
                             p->status = MORTO;
-                            printf(VERMELHO "\nWASTED!\nPlayer morreu! Jogo finalizado." RESET);
+                            printf(VERMELHO_BACKGROUND "\nWASTED!" RESET);
+                            printf(VERMELHO "\nPlayer morreu! Jogo finalizado." RESET);
                             printf("\nAcesse " AZUL "dataset/relatorio.data" RESET " para visualizar informações detalhadas sobre o percurso.\n");
                             checkpoint(m);
                             aux->numMatriz = m->numMatriz;
@@ -209,6 +210,9 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
                 }
             }
         } while(checkMatrizZerada(aux) && p->status == VIVO);
+        printf(VERDE_BACKGROUND "\nVICTORY!" RESET);
+        printf(VERDE "\nPlayer VIVO! Jogo finalizado." RESET);
+        printf("\nAcesse " AZUL "dataset/relatorio.data" RESET " para visualizar informações detalhadas sobre o percurso.\n");
     } else{
         printf(VERMELHO "Não foi possível se mover.\n" RESET);
         return;

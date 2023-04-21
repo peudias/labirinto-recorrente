@@ -3,14 +3,16 @@
 |Player está morto.                                                        |
 |Jogo foi finalizado e abaixo estão as informações detalhadas da jornada.  |
 |                                                                          |
-| => Quantidade de casas diferentes visitadas:      [  5 ]                 |
+| => Quantidade de casas diferentes visitadas:      [ 11 ]                 |
 |                                                                          |
-| => Soma total dos itens consumidos pelo player:   [  6 ]                 |
+| => Soma total dos itens consumidos pelo player:   [ 14 ]                 |
 |                                                                          |
-| => Quantidade de casas diferentes não visitadas:  [528 ]                 |
+| => Quantidade de casas diferentes não visitadas:  [ 42 ]                 |
 |                                                                          |
-| => Quantidade de perigos enfrentados pelo player: [ 10 ]                 |
+| => Quantidade de perigos enfrentados pelo player: [  7 ]                 |
 |                                                                          |
 | => Quantidade total de matrizes:                  [ 10 ]                 |
+|                                                                          |
+| => Quantidade de vida do player:                  [  6 ]                 |
 |                                                                          |
 |==========================================================================|
