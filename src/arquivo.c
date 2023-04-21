@@ -6,7 +6,7 @@ void lerCheckpoint(matrizinput *m){
 
     FILE *file = fopen(str, "r");
 
-    char *result, linha[100];
+    char *result, linha[1024];
     int contador = 0;
     int controle = 1;
 
@@ -43,7 +43,7 @@ void lerBinario(auxMatriz *aux){
 
     FILE *file = fopen(str, "r");
 
-    char *result, linha[100];
+    char *result, linha[1024];
     int contador = 0;
     int controle = 1;
 
@@ -80,7 +80,7 @@ void lerArquivo(matrizinput *m, auxMatriz *aux){
     FILE *filelog = fopen("dataset/output.data", "w");
     fclose(filelog);
 
-    char *result, linha[100];
+    char *result, linha[1024];
     int contador = 0;
     int controle = 1;
 
@@ -270,7 +270,7 @@ void LidoNaoLido(int N, int *naoVisita, int *visita){
 
     FILE *file = fopen(str, "r");
 
-    char *result, linha[100];
+    char *result, linha[1024];
     int controle = 1;
 
     if(file == NULL){
@@ -331,7 +331,7 @@ void createRelatorio(Player *p){
         fprintf(file, "|                                                                          |\n");
         fprintf(file, "| => Quantidade total de matrizes:                  [%5d    ]            |\n", p->qtdTotal);
         fprintf(file, "|                                                                          |\n");
-        fprintf(file, "| => Quantidade de vida do player:                  [%5d    ]            |\n", p->vida);
+        fprintf(file, "| => Quantidade de vida do player restante:         [%5d    ]            |\n", p->vida);
         fprintf(file, "|                                                                          |\n");
         fprintf(file, "| => Player Status:                                 [  %5s  ]            |\n", ((p->status == 1) ? "VIVO" : "MORTO"));
         fprintf(file, "|                                                                          |\n");
