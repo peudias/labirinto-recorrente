@@ -12,6 +12,7 @@
 #define VERMELHO_BACKGROUND "\x1b[41m"
 #define VERDE_BACKGROUND "\x1b[42m"
 #define AZUL "\x1b[34m"
+#define CINZA "\x1b[47m"
 #define RESET "\x1b[0m"
 
 #include<stdio.h>

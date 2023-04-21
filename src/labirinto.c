@@ -116,6 +116,8 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
     int xBackup, yBackup;
     int movimentoVazio = 0;
     if(m->matriz[x][y] == PAREDE){
+        printf(CINZA "\nTIE GAME!" RESET);
+        printf(VERDE "\nPlayer VIVO!" RESET);
         printf(VERMELHO "\nPlayer iniciou na parede. \nJogo finalizado!\n" RESET);
         return;
     }
@@ -132,6 +134,8 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
             movimentoVazio++;
             if(movimentoVazio > (m->Ncoluna * m->Nlinha * m->Nlinha * m->qtdMatriz)){
                 //printf("foi minha culpa\n");
+                printf(VERDE_BACKGROUND "\nVICTORY!" RESET);
+                printf(VERDE "\nPlayer VIVO!" RESET);
                 printf(VERMELHO "\nPlayer ficou andando sem consumir itens por %d vezes.\nJogo finalizado!\n" RESET, (m->Ncoluna * m->Nlinha * m->Nlinha * m->qtdMatriz));
                 return;
             }
@@ -205,7 +209,9 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
                 y = rand() % m->Ncoluna;
 
                 if(!checkMovimento(m, x, y)){
+                    printf(VERDE_BACKGROUND "\nVICTORY!" RESET);
                     printf(VERMELHO "Não foi possível se mover.\n" RESET);
+                    printf(VERDE "\nPlayer VIVO! Jogo finalizado." RESET);
                     return;
                 }
             }
