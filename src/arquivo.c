@@ -318,7 +318,7 @@ void createRelatorio(Player *p){
     } else{
         fprintf(file, "|====================> INFORMAÇÕES SOBRE O PERCURSO <======================|\n");
         fprintf(file, "|                                                                          |\n");
-        fprintf(file, "|Player está morto.                                                        |\n");
+        fprintf(file, "|Player's info:                                                            |\n");
         fprintf(file, "|Jogo foi finalizado e abaixo estão as informações detalhadas da jornada.  |\n");
         fprintf(file, "|                                                                          |\n");
         fprintf(file, "| => Quantidade de casas diferentes visitadas:      [%3d ]                 |\n", p->qtdVisita);   //(a) quantas casas foram percorridas ao todo; 
