@@ -118,7 +118,7 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
     if(m->matriz[x][y] == PAREDE){
         printf(CINZA "\nTIE GAME!" RESET);
         printf(VERDE "\nPlayer VIVO!" RESET);
-        printf(VERMELHO "\nPlayer iniciou na parede. \nJogo finalizado!" RESET);
+        printf(VERMELHO "\nPlayer iniciou na parede.\nJogo finalizado!" RESET);
         printf("\nAcesse " AZUL "dataset/relatorio.data" RESET " para visualizar informações detalhadas sobre o percurso.\n");
         return;
     }
@@ -133,11 +133,11 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
             yBackup = y;
 
             movimentoVazio++;
-            if(movimentoVazio > (m->Ncoluna * m->Nlinha * m->Nlinha * m->qtdMatriz)){
+            if(movimentoVazio > (m->Ncoluna * m->Nlinha * m->Nlinha * p->qtdTotal)){
                 //printf("foi minha culpa\n");
                 printf(VERDE_BACKGROUND "\nVICTORY!" RESET);
                 printf(VERDE "\nPlayer VIVO!" RESET);
-                printf(VERMELHO "\nPlayer ficou andando sem consumir itens por %d vezes.\nJogo finalizado!" RESET, (m->Ncoluna * m->Nlinha * m->Nlinha * m->qtdMatriz));
+                printf(VERMELHO "\nPlayer ficou andando sem consumir itens por %d vezes.\nJogo finalizado!" RESET, (m->Ncoluna * m->Nlinha * m->Nlinha * p->qtdTotal));
                 printf("\nAcesse " AZUL "dataset/relatorio.data" RESET " para visualizar informações detalhadas sobre o percurso.\n");
                 return;
             }
@@ -151,7 +151,7 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
                         if(p->vida == 0){
                             p->status = MORTO;
                             printf(VERMELHO_BACKGROUND "\nWASTED!" RESET);
-                            printf(VERMELHO "\nPlayer morreu! Jogo finalizado." RESET);
+                            printf(VERMELHO "\nPlayer morreu! \nJogo finalizado." RESET);
                             printf("\nAcesse " AZUL "dataset/relatorio.data" RESET " para visualizar informações detalhadas sobre o percurso.\n");
                             checkpoint(m);
                             aux->numMatriz = m->numMatriz;
@@ -166,7 +166,12 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
                             p->banco_vida++;
                             p->sacola++;
 
-                            if(p->banco_vida == MAX_BANCO) p->vida++;
+                            if(p->banco_vida == MAX_BANCO){
+                                if(p->vida < 10){
+                                    p->vida++;
+                                }
+                                p->banco_vida = 0;
+                            }
                         }
                         if(aux->matriz[x][y] == N_VISITADO){
                             // p->qtdVisita++;
@@ -193,7 +198,12 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
                         p->banco_vida++;
                         p->sacola++;
 
-                        if(p->banco_vida == MAX_BANCO) p->vida++;
+                        if(p->banco_vida == MAX_BANCO){
+                            if(p->vida < 10){
+                                p->vida++;
+                            }
+                            p->banco_vida = 0;
+                        }
                     }
                     if(aux->matriz[x][y] == N_VISITADO) aux->matriz[x][y] = VISITADO;
                 }
@@ -212,7 +222,7 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
 
                 if(!checkMovimento(m, x, y)){
                     printf(VERDE_BACKGROUND "\nVICTORY!" RESET);
-                    printf(VERMELHO "Não foi possível se mover.\n" RESET);
+                    printf(VERMELHO "\nNão foi possível se mover." RESET);
                     printf(VERDE "\nPlayer VIVO! Jogo finalizado." RESET);
                     printf("\nAcesse " AZUL "dataset/relatorio.data" RESET " para visualizar informações detalhadas sobre o percurso.\n");
                     return;

@@ -321,17 +321,19 @@ void createRelatorio(Player *p){
         fprintf(file, "|Player's info:                                                            |\n");
         fprintf(file, "|Jogo foi finalizado e abaixo estão as informações detalhadas da jornada.  |\n");
         fprintf(file, "|                                                                          |\n");
-        fprintf(file, "| => Quantidade de casas diferentes visitadas:      [%3d ]                 |\n", p->qtdVisita);   //(a) quantas casas foram percorridas ao todo; 
+        fprintf(file, "| => Quantidade de casas diferentes visitadas:      [%5d    ]            |\n", p->qtdVisita);   //(a) quantas casas foram percorridas ao todo; 
         fprintf(file, "|                                                                          |\n");
-        fprintf(file, "| => Soma total dos itens consumidos pelo player:   [%3d ]                 |\n", p->sacola);      //(b) qual a soma de itens consumidos pelo caminho;
+        fprintf(file, "| => Soma total dos itens consumidos pelo player:   [%5d    ]            |\n", p->sacola);      //(b) qual a soma de itens consumidos pelo caminho;
         fprintf(file, "|                                                                          |\n");
-        fprintf(file, "| => Quantidade de casas diferentes não visitadas:  [%3d ]                 |\n", p->qtdNaoVisita);//(c) quantas casas da matriz ficaram sem serem exploradas;
+        fprintf(file, "| => Quantidade de casas diferentes não visitadas:  [%5d    ]            |\n", p->qtdNaoVisita);//(c) quantas casas da matriz ficaram sem serem exploradas;
         fprintf(file, "|                                                                          |\n");
-        fprintf(file, "| => Quantidade de perigos enfrentados pelo player: [%3d ]                 |\n", p->inimigo);     //(d) quantos perigos foram enfrentados ao decorrer do percurso.
+        fprintf(file, "| => Quantidade de perigos enfrentados pelo player: [%5d    ]            |\n", p->inimigo);     //(d) quantos perigos foram enfrentados ao decorrer do percurso.
         fprintf(file, "|                                                                          |\n");
-        fprintf(file, "| => Quantidade total de matrizes:                  [%3d ]                 |\n", p->qtdTotal);
+        fprintf(file, "| => Quantidade total de matrizes:                  [%5d    ]            |\n", p->qtdTotal);
         fprintf(file, "|                                                                          |\n");
-        fprintf(file, "| => Quantidade de vida do player:                  [%3d ]                 |\n", p->vida);
+        fprintf(file, "| => Quantidade de vida do player:                  [%5d    ]            |\n", p->vida);
+        fprintf(file, "|                                                                          |\n");
+        fprintf(file, "| => Player Status:                                 [  %5s  ]            |\n", ((p->status == 1) ? "VIVO" : "MORTO"));
         fprintf(file, "|                                                                          |\n");
         fprintf(file, "|==========================================================================|");
     }

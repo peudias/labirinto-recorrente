@@ -1,18 +1,20 @@
 |====================> INFORMAÇÕES SOBRE O PERCURSO <======================|
 |                                                                          |
-|Player está morto.                                                        |
+|Player's info:                                                            |
 |Jogo foi finalizado e abaixo estão as informações detalhadas da jornada.  |
 |                                                                          |
-| => Quantidade de casas diferentes visitadas:      [ 11 ]                 |
+| => Quantidade de casas diferentes visitadas:      [   12    ]            |
 |                                                                          |
-| => Soma total dos itens consumidos pelo player:   [ 14 ]                 |
+| => Soma total dos itens consumidos pelo player:   [   17    ]            |
 |                                                                          |
-| => Quantidade de casas diferentes não visitadas:  [ 42 ]                 |
+| => Quantidade de casas diferentes não visitadas:  [  777    ]            |
 |                                                                          |
-| => Quantidade de perigos enfrentados pelo player: [  7 ]                 |
+| => Quantidade de perigos enfrentados pelo player: [   10    ]            |
 |                                                                          |
-| => Quantidade total de matrizes:                  [ 10 ]                 |
+| => Quantidade total de matrizes:                  [   18    ]            |
 |                                                                          |
-| => Quantidade de vida do player:                  [  6 ]                 |
+| => Quantidade de vida do player:                  [    0    ]            |
+|                                                                          |
+| => Player Status:                                 [  MORTO  ]            |
 |                                                                          |
 |==========================================================================|
