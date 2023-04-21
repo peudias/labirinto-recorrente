@@ -118,7 +118,7 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
     if(m->matriz[x][y] == PAREDE){
         printf(CINZA "\nTIE GAME!" RESET);
         printf(VERDE "\nPlayer VIVO!" RESET);
-        printf(VERMELHO "\nPlayer iniciou na parede. \nJogo finalizado!\n" RESET);
+        printf(VERMELHO "\nPlayer iniciou na parede. \nJogo finalizado!" RESET);
         printf("\nAcesse " AZUL "dataset/relatorio.data" RESET " para visualizar informações detalhadas sobre o percurso.\n");
         return;
     }
@@ -137,7 +137,7 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
                 //printf("foi minha culpa\n");
                 printf(VERDE_BACKGROUND "\nVICTORY!" RESET);
                 printf(VERDE "\nPlayer VIVO!" RESET);
-                printf(VERMELHO "\nPlayer ficou andando sem consumir itens por %d vezes.\nJogo finalizado!\n" RESET, (m->Ncoluna * m->Nlinha * m->Nlinha * m->qtdMatriz));
+                printf(VERMELHO "\nPlayer ficou andando sem consumir itens por %d vezes.\nJogo finalizado!" RESET, (m->Ncoluna * m->Nlinha * m->Nlinha * m->qtdMatriz));
                 printf("\nAcesse " AZUL "dataset/relatorio.data" RESET " para visualizar informações detalhadas sobre o percurso.\n");
                 return;
             }
