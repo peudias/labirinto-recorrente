@@ -72,7 +72,7 @@ Este algoritmo possui um arquivo Makefile que realiza todo o procedimento de com
   <img align="center" src="https://img.shields.io/badge/-phpd-05122A?style=flat&logo=linkedin" alt="linkedin"/>
 </a>
 
-<a style="color:black" href="mailto:phpdias@outlook.com?subject=[GitHub]%20O%20Caminho%20Guloso">
+<a style="color:black" href="mailto:phpdias@outlook.com?subject=[GitHub]%20O%20Labirinto%20Recorrente">
  <img align="center" src="https://img.shields.io/badge/-phpdias@outlook.com-05122A?style=flat&logo=email" alt="email"/>
 </a>
 
