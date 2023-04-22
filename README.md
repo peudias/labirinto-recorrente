@@ -40,8 +40,6 @@ Nesse labirinto há paredes que bloqueiam certos passos `#`, perigos que consome
 
 ## Regras
 
-Quanto as paredes #, não há muito o que fazer a não ser desviar e continuar a rota. Já os perigos, a cada passada, tende a subtrair 1 de vida de um total de 10. Assim, ao ficar sem pontos de vida o algoritmo deve parar e indicar fim de jogo.
-
 1 - Criar um sistema que leia K matrizes quadradas no tamanho NxN.
 
 2 - O programa deve enumerá-las, de forma a deixá-las organizadas para processamento.  
@@ -60,26 +58,19 @@ Quanto as paredes #, não há muito o que fazer a não ser desviar e continuar a
   
   > (e) ir em diagonal para cima.
 
-  ![Captura de tela de 2023-04-22 19-06-18](https://user-images.githubusercontent.com/84406892/233808397-75e98581-96c8-44c5-b2e5-d5bed230c64a.png)
-
+  ![exemplomatriz](https://user-images.githubusercontent.com/84406892/233808930-39043b46-b0b7-48ce-abd8-4691a551779b.png)
   
-  ![exemplomatriz](https://user-images.githubusercontent.com/84406892/227231857-df0d0d47-e2e8-4a13-ac89-9f6e3dbd4262.jpeg)
+  > Obs:. Setas verdes indicam que o player <strong>PODE</strong> seguir aquele caminho. 
   
-  > Obs:. Setas verdes indicam que a matriz <strong>PODE</strong> seguir aquele caminho. Setas vermelhas indicam que a matriz <strong>NÃO</strong> pode seguir aquele caminho.
-  
-  > Todas essas regras só se aplicam se a casa (posição [ i , j ] da matriz) ainda não tenha sido descoberta ou já processada. 
+5 - Para caminhar, deve optar de forma aleatória a próxima casa.
 
-5 - Para caminhar, deve sempre optar pelo valor da próxima casa, valor esse que deve ser o maior dentre eles. Caso haja empate entre casas, siga uma regra para adotar sempre uma mesma decisão de caminhamento. 
+6 - Quanto as paredes `#`, não há muito o que fazer a não ser desviar e continuar a rota. 
 
-6 - Ao alcançar a última linha e coluna da matriz, selecione a próxima matriz e repita todo o processo novamente. Por fim, apresente ao usuário qual foi o caminho adotado e qual a soma obtida do caminho realizado. 
+7 - Já os perigos `*`, a cada passada, tende a subtrair 1 de vida de um total de 10. Assim, ao ficar sem pontos de vida o algoritmo deve parar e indicar fim de jogo.
 
-## Sobre o caminho guloso
+8 - Ao alcançar a primeira ou última coluna da matriz, o player irá se teletransportar aleatoriamente para uma outra matriz, e repete todo o processo novamente. 
 
-Nas palavras de Aditya Y. Bhargava,
-
-> Algoritmos gulosos são caracterizados por, a cada etapa, escolher a solução ideal, para que no fim, tenha uma solução global ideal.
-
-> Em alguns casos, tudo o que você precisa é de um algoritmo que resolva o problema de uma maneira muito boa. E é aí que os algoritmos gulosos entram, pois eles são simples de escrever e normalmente chegam bem perto da solução perfeita.
+## Sobre o Labirinto Recorrente
 
 ### Resolução do problema
 
@@ -87,9 +78,9 @@ A seguir, três seções das quais abordo a resolução do problema, desde a [en
 
 ### Entradas de dados necessárias
 
-No programa existe um diretório nomeado como `pasta`, que dentro contém um documento chamado `input.data`.
+No programa existe uma pasta nomeada como `dataset`, que dentro contém um documento chamado `input.data`.
 
-Este documento pode ser gerado através do seguinte repositório git, que foi utilizado como referência: [Generate Data To Matrix](https://github.com/mpiress/GenerateDataToMatrix) [^1]
+Este documento pode ser gerado através do seguinte repositório git, que foi utilizado como referência: [Generate Data To Maze](https://github.com/mpiress/GenerateDataToMaze) [^1]
 
 Analogamente, também pode ser digitado manualmente pelo usuário, mas não é o intuito que utilize dessa forma.
 
@@ -99,17 +90,17 @@ Para exemplificar, utilizarei o seguinte arquivo `input.data`, gerado por mim at
 
 No exemplo a seguir, estão as informações sobre o tamanho da matriz e quantas matrizes serão analisadas neste programa.
 
-Observe que a primeira linha do arquivo é onde se encontram as entradas NxN da matriz.
+Observe que a primeira linha do arquivo é onde se encontram as entradas NxN da matriz e também a quantidade de matrizes que serão utilizadas no jogo.
 
-Nos blocos subsequentes, a cada cinco linhas, separados por uma linha em branco, encontram-se as matrizes.
+Nos blocos subsequentes, a cada oito linhas (para este exemplo), separados por uma linha em branco, encontram-se as matrizes.
 
-Nessa imagem é possível perceber que existem cinco matrizes distintas entre si no total.
+Nessa imagem é possível visualizar três das seis matrizes que existem distintas entre si no total.
 
-![Entrada de dados](https://user-images.githubusercontent.com/84406892/226461030-8900d360-f4db-464f-a305-ec2d873364cb.png)
+![input.data](https://user-images.githubusercontent.com/84406892/233810364-27f6f968-2683-449c-872a-41874dfc4612.png)
   
 ### Saídas obtidas
 
-Ao executar o programa, a seguinte saída é gerada.
+Ao executar o programa, existem 4 possíveis saídas a serem geradas.
 
 Observe que existe um padrão nas impressões. 
 Primeiro é impresso a matriz original, corretamente ordenada e dentro de colchetes.
