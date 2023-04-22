@@ -2,13 +2,13 @@ Questionário:
 
 1. O código pode ser baixado do git? =============================================================== OK!
 
-2. O código executa com matrizes cujo tamanho é ímpar e imprime resultados corretamente? =========== 
+2. O código executa com matrizes cujo tamanho é ímpar e imprime resultados corretamente? =========== OK!
 
-3. O código executa com matrizes cujo tamanho é par e imprime resultados corretamente?
+3. O código executa com matrizes cujo tamanho é par e imprime resultados corretamente? ============= OK!
 
-4. O código está bem estruturado e organizado?
+4. O código está bem estruturado e organizado? ===================================================== OK!
 
-5. O código bem como a entrada seguem os padrões de pasta e nomes definidos?
+5. O código bem como a entrada seguem os padrões de pasta e nomes definidos? ======================= OK!
 
 .
 
