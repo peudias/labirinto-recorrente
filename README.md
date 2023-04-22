@@ -146,39 +146,110 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 ### Explicando um pouco sobre o código
 
-O programa em si possui basicamente 6 funções. Todas que irei citar, estão presentes no [caminhoguloso.c](https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c). 
+#### O algoritmo por completo possui 16 funções. 
 
-- menu( );
-> Função localizada na [linha 3](https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c#L3). 
+### Funções presentes na [util.c](https://github.com/phpdias/labirinto-recorrente/blob/main/src/util.c). 
 
+1. void printCor(int cor);
 
+> Função localizada na [linha 3](https://github.com/phpdias/labirinto-recorrente/blob/main/src/util.c#L3).
 
-> Tem como funcionalidade chamar a função que faz imprimir, e assim, imprimir a matriz original. Em seguida executar a função que faz caminhar pela matriz, e por fim, imprimir a matriz final, que sairá de forma visual para o usuário, mostrando o caminho percorrido. 
+> Esta é uma função que utilizei para o processo de criação do algoritmo. Serve apenas para pintar as paredes de azul e os inimigos de vermelho. 
 
-- lerArquivo( );
-> Função localizada na [linha 10](https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c#L10). 
+> Não é uma função que aparece para o usuário final. Foi utilizada apenas no processo de desenvolvimento.
+
+### Funções presentes na [labirinto.c](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c). 
+
+1. bool checkMovimento(matrizinput *m, int x, int y);
+
+> Função localizada na [linha 3](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L3).
+
+> Esta é uma função para o processo checagem de movimento. Verifica se as casas ao redor do player são ou não parede. 
+
+2. bool checkMatrizZerada(auxMatriz *aux);
+
+> Função localizada na [linha 91](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L91). 
+
+> Esta é uma função para o processo de checar se a matriz está zerada.
+
+3. int qtdVisita(auxMatriz *m, int check);
+
+> Função localizada na [linha 99](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L99). 
+
+> Esta é uma função para o processo de checar a quantidade de casas visitadas.
+
+4. void movimento(matrizinput *m, auxMatriz *aux, Player *p);
+
+> Função localizada na [linha 109](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L109). 
+
+> Esta é a função para o processo de movimento do player.
+
+> Aqui também está presente as mensagens de vitória, derrota e empate.
+
+### Funções presentes na [arquivo.c](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c). 
+
+1. void lerCheckpoint(matrizinput *m);
+
+> Função localizada na [linha 3](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L3). 
+
+2. void lerBinario(auxMatriz *aux);
+
+> Função localizada na [linha 40](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L40). 
+
+3. void lerArquivo(matrizinput *m, auxMatriz *aux);
+
+> Função localizada na [linha 77](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L77). 
 
 > Tem como funcionalidade abrir o arquivo `input.data`, e não sendo possível realizar essa ação, imprimirá uma mensagem indicando tal erro. Do contrário, tendo êxito em abrir o arquivo, essa função irá ler as informações dentro do arquivo. Também é responsável por lidar com a possibilidade do arquivo `input.data` ter espaços em branco no final da última matriz, fazendo com que isso não interfira no resultado desejado.
 
-- primeiraLinha( );
-> Função localizada na [linha 53](https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c#L53). 
+4. void primeiraLinha(char *str, int *Nlinha, int *Ncoluna, int *qtdMatriz);
 
-> Tem como funcionalidade tokenizar a primeira linha do arquivo `input.data`. É a função responsável por fazer o programa reconhecer que a primeira linha será a correspondente aos valores de N da matriz NxN.
+> Função localizada na [linha 123](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L123). 
 
-- tokenizar( );
-> Função localizada na [linha 64](https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c#L64). 
+> Tem como funcionalidade tokenizar a primeira linha do arquivo `input.data`. É a função responsável por fazer o programa reconhecer que a primeira linha será a correspondente aos valores de N da matriz NxN e também a quantidade de matrizes.
+
+5. void tokenizar(char *str, int **matriz, int contadorLinha);
+
+> Função localizada na [linha 145](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L145). 
 
 > Tem como funcionalidade tokenizar. É a função responsável por reconhecer as matrizes e acessar a posição apropriada da matriz.
 
-- ImprimeAleatoria( );
-> Função localizada na [linha 78](https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c#L78). 
+6. void init_matrizAux(matrizinput *m, auxMatriz *aux);
 
-> Tem como funcionalidade imprimir a matriz e também é responsável pela formatação da mesma para a visualização do usuário.
+> Função localizada na [linha 165](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L165). 
 
-- Contador( );
-> Função localizada na [linha 87](https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c#L87). 
+7. void checkpoint(matrizinput *m);
 
-> Tem como funcionalidade percorrer a matriz. Essa é a função com mais finalidades para o problema. É onde está a lógica do programa para que a matriz seja percorrida corretamente. Também é lá que é feito a soma dos números transitados pelas matrizes, além de ainda ser responsável por imprimir os valores ordenados em que a matriz movimentou.
+> Função localizada na [linha 188](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L188). 
+
+8. void checkpoint_binaria(auxMatriz *aux);
+
+> Função localizada na [linha 210](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L210).
+
+
+9. void logs(matrizinput *m, int x, int y);
+
+> Função localizada na [linha 232](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L232).
+
+> Esta é uma função para a criação do log pós rodada do jogo. 
+
+> Responsável por mostrar informações como: Onde o player está, qual matriz está, qual posição está, para onde o player se moveu.
+
+
+10. void LidoNaoLido(int N, int *naoVisita, int *visita);
+
+> Função localizada na [linha 266](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L266).
+
+
+11. void createRelatorio(Player *p);
+
+> Função localizada na [linha 310](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L310).
+
+> Esta é uma função para a criação do relatório pós rodada do jogo. 
+
+> Responsável por mostrar informações como: Quantidade de cadas diferentes visitadas e não visitadas, soma total dos itens consumidos, quantos perigos foram enfrentados, quantidade de vida do player e seu status.
+
+## Conclusão
 
 ## Compilação e Execução
 
@@ -204,7 +275,7 @@ Este algoritmo possui um arquivo Makefile que realiza todo o procedimento de com
   <img align="center" src="https://img.shields.io/badge/-phpd-05122A?style=flat&logo=linkedin" alt="linkedin"/>
 </a>
 
-<a style="color:black" href="mailto:phpdias@outlook.com?subject=[GitHub]%20O%20Caminho%20Guloso">
+<a style="color:black" href="mailto:phpdias@outlook.com?subject=[GitHub]%20O%20Labirinto%20Recorrente">
  <img align="center" src="https://img.shields.io/badge/-phpdias@outlook.com-05122A?style=flat&logo=email" alt="email"/>
 </a>
 
@@ -212,6 +283,6 @@ Este algoritmo possui um arquivo Makefile que realiza todo o procedimento de com
 
 ## Referências
 
-[^1]: [GitHub](<https://github.com/mpiress/GenerateDataToMatrix>)
+[^1]: [GitHub](<https://github.com/mpiress/GenerateDataToMaze>)
 
 
