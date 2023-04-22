@@ -108,27 +108,48 @@ Primeiro é impresso uma palavra que indica se o player permaneceu vivo `VICTORY
 
 Em seguida é mostrado uma breve frase que indica o motivo do encerramento do game, e logo abaixo uma mensagem confirmnando que o jogo foi finalizado.
 
-Por fim, uma impressão visual do caminho percorrido dessa matriz.
+Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada.
 
-#### Primeira Matriz percorrida
+#### VICTORY! - Player conseguiu ZERAR a matriz.
 
-![matriz1](https://user-images.githubusercontent.com/84406892/227222471-5bc2d926-a49d-48f6-a54a-2d737c105f83.png)
+![victory-normal](https://user-images.githubusercontent.com/84406892/233811289-662cc367-e0c0-4d3f-8ff2-6430d854131d.png)
 
-#### Segunda Matriz percorrida
+  > Neste caso o player caminhou o suficiente para conseguir zerar toda a trajetória sem zerar a vida, ou seja, morrer (Que sorte!).  
 
-![matriz2](https://user-images.githubusercontent.com/84406892/227222477-9b5676fc-d7d7-491f-a5b1-bdd1f3874534.png)
+#### VICTORY! - Sem consumir itens.
 
-#### Terceira Matriz percorrida
+![victory-sem-consumir](https://user-images.githubusercontent.com/84406892/233811304-39ebb074-a511-44fa-8329-a016799ee2f5.png)
 
-![matriz3](https://user-images.githubusercontent.com/84406892/227222480-64b2e842-054e-4b0a-acfc-892cdd0583d6.png)
+> Neste caso o player entrou em um loop onde não morre mas também não consome itens, então a regra criada foi que, caso chegue a um determinado número x de caminhada, e ainda estando vivo, vence.
+> O cálculo para encontrar este número está disponível na [linha 136]([https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c#L3](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L136)) 
 
-#### Quarta Matriz percorrida
+#### VICTORY! - Player não consegue se mover.
 
-![matriz4](https://user-images.githubusercontent.com/84406892/227222484-4b666d06-5406-49c7-98d7-1a4c449b706d.png)
+![victory-3](https://user-images.githubusercontent.com/84406892/233811310-f0dbc8df-bc58-458f-a986-f27f6c460647.png)
 
-#### Quinta Matriz percorrida
+> Neste caso o player está preso entre paredes e não consegue se mover.
+> Exemplo de matriz:
+> #  #  #  #  #  #  #  #
+> #  #  #  #  #  #  #  #
+> #  # >X< #  #  #  #  #
+> #  #  #  #  #  #  #  #
+> #  #  #  #  #  #  #  #
+> #  #  #  #  #  #  #  #
+> #  #  #  #  #  #  #  #
+> #  #  #  #  #  #  #  #
 
-![matriz5](https://user-images.githubusercontent.com/84406892/227222486-d8e0d622-035a-4be3-bce2-37d8ba149054.png)
+#### WASTED! - Player morreu.
+
+![wasted](https://user-images.githubusercontent.com/84406892/233811321-bc02a368-8365-4fef-bf85-5845a9be09f1.png)
+
+> Neste caso o player está com a vida zerada e morreu.
+
+#### TIE GAME!
+
+![tie-game](https://user-images.githubusercontent.com/84406892/233811317-263943b9-9d3a-4d8d-a6ae-51b5d4f45472.png)
+
+> Esta é uma regra especial onde, se o player iniciar em uma parede, automaticamente finaliza o jogo.
+> Uma vez que ainda estará com sua vida total mas não conseguiu vencer por outros meios, declarei como empate.
 
 ### Explicando um pouco sobre o código
 
