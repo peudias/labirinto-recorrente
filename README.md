@@ -122,22 +122,13 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 > Neste caso o player entrou em um loop onde não morre mas também não consome itens, então a regra criada foi que, caso chegue a um determinado número x de caminhada, e ainda estando vivo, vence.
 
-O cálculo para encontrar este número está disponível na [linha 136]([https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c#L3](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L136)) 
+> O cálculo para encontrar este número está disponível na [linha 136](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L136).
 
 #### VICTORY! - Player não consegue se mover.
 
 ![victory-3](https://user-images.githubusercontent.com/84406892/233811310-f0dbc8df-bc58-458f-a986-f27f6c460647.png)
 
-> Neste caso o player está preso entre paredes e não consegue se mover.
-> Exemplo de matriz:
-> #  #  #  #  #  #  #  #
-> #  #  #  #  #  #  #  #
-> #  # >X< #  #  #  #  #
-> #  #  #  #  #  #  #  #
-> #  #  #  #  #  #  #  #
-> #  #  #  #  #  #  #  #
-> #  #  #  #  #  #  #  #
-> #  #  #  #  #  #  #  #
+> Neste caso, a matriz possui apenas um local disponível e o player está preso neste local entre paredes, logo não consegue se mover.
 
 #### WASTED! - Player morreu.
 
