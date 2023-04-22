@@ -100,12 +100,13 @@ Nessa imagem é possível visualizar três das seis matrizes que existem distint
   
 ### Saídas obtidas
 
-Ao executar o programa, existem 4 possíveis saídas a serem geradas.
+Ao executar o programa, existem 5 possíveis saídas a serem geradas.
 
 Observe que existe um padrão nas impressões. 
-Primeiro é impresso a matriz original, corretamente ordenada e dentro de colchetes.
 
-Em seguida é mostrado a soma do caminho que a matriz percorreu durante a execução do programa, e logo abaixo o caminho detalhado por onde passou.
+Primeiro é impresso uma palavra que indica se o player permaneceu vivo `VICTORY!`, se morreu `WASTED!`, ou se empatou `TIE GAME!`.
+
+Em seguida é mostrado uma breve frase que indica o motivo do encerramento do game, e logo abaixo uma mensagem confirmnando que o jogo foi finalizado.
 
 Por fim, uma impressão visual do caminho percorrido dessa matriz.
 
