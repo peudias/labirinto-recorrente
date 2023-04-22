@@ -228,12 +228,16 @@ void movimento(matrizinput *m, auxMatriz *aux, Player *p){
                     return;
                 }
             }
-        } while(checkMatrizZerada(aux) && p->status == VIVO);
+        } while (checkMatrizZerada(aux) && p->status == VIVO);
         printf(VERDE_BACKGROUND "\nVICTORY!" RESET);
         printf(VERDE "\nPlayer VIVO! Jogo finalizado." RESET);
+        printf(VERDE "\nPlayer conseguiu zerar toda a trajetória." RESET);
         printf("\nAcesse " AZUL "dataset/relatorio.data" RESET " para visualizar informações detalhadas sobre o percurso.\n");
-    } else{
-        printf(VERMELHO "Não foi possível se mover.\n" RESET);
+    } else {
+        printf(VERDE_BACKGROUND "\nVICTORY!" RESET);
+        printf(VERDE "\nPlayer VIVO! Jogo finalizado." RESET);
+        printf(VERMELHO "\nNão foi possível se mover." RESET);
+        printf("\nAcesse " AZUL "dataset/relatorio.data" RESET " para visualizar informações detalhadas sobre o percurso.\n");
         return;
     }
     checkpoint(m);
