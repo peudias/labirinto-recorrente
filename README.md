@@ -114,14 +114,15 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 ![victory-normal](https://user-images.githubusercontent.com/84406892/233811289-662cc367-e0c0-4d3f-8ff2-6430d854131d.png)
 
-  > Neste caso o player caminhou o suficiente para conseguir zerar toda a trajetória sem zerar a vida, ou seja, morrer (Que sorte!).  
+ > Neste caso o player caminhou o suficiente para conseguir zerar toda a trajetória sem zerar a vida, ou seja, morrer (Que sorte!).  
 
 #### VICTORY! - Sem consumir itens.
 
 ![victory-sem-consumir](https://user-images.githubusercontent.com/84406892/233811304-39ebb074-a511-44fa-8329-a016799ee2f5.png)
 
 > Neste caso o player entrou em um loop onde não morre mas também não consome itens, então a regra criada foi que, caso chegue a um determinado número x de caminhada, e ainda estando vivo, vence.
-> O cálculo para encontrar este número está disponível na [linha 136]([https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c#L3](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L136)) 
+
+O cálculo para encontrar este número está disponível na [linha 136]([https://github.com/phpdias/caminho-guloso/blob/main/src/caminhoguloso.c#L3](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L136)) 
 
 #### VICTORY! - Player não consegue se mover.
 
@@ -149,6 +150,7 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 ![tie-game](https://user-images.githubusercontent.com/84406892/233811317-263943b9-9d3a-4d8d-a6ae-51b5d4f45472.png)
 
 > Esta é uma regra especial onde, se o player iniciar em uma parede, automaticamente finaliza o jogo.
+
 > Uma vez que ainda estará com sua vida total mas não conseguiu vencer por outros meios, declarei como empate.
 
 ### Explicando um pouco sobre o código
