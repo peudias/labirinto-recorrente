@@ -10,7 +10,7 @@
 
 ## Apresentando o problema
 
-Um garoto se encontra perdido em um labirinto, o qual é compreendido por nós como sendo uma matriz cujas posição de sua localização é dada por um valor x,y dessa estrutura.
+Um garoto se encontra perdido em um labirinto, o qual é compreendido por nós como sendo uma matriz cujas posições de sua localização é dada por um valor x,y dessa estrutura.
 
 Trata-se de um jogo inteiramente automático e aleatório. O garoto precisa percorrê-lo, encontrando obstáculos como paredes intransponíveis `#`, itens que podem lhe conceder vidas, bem como perigos que podem tirá-las `*`. O objetivo do jogo é concluir todo o trajeto, escolhendo movimentos ao acaso, de forma a chegar ao final sem perder todas as vidas. Em caso de fracasso, o personagem perde todas as vidas e, consequentemente, o jogo é perdido.
 
