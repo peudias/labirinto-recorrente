@@ -10,9 +10,9 @@
 
 ## Apresentando o problema
 
-Um garoto se encontra perdido em um labirinto, o qual é compreendido por nós como sendo uma matriz cujas posições de sua localização é dada por um valor x,y dessa estrutura.
+Um garoto se encontra perdido em um labirinto, o qual é compreendido como uma matriz cujas posições de sua localização é dada por um valor x,y dessa estrutura.
 
-Trata-se de um jogo inteiramente automático e aleatório. O garoto precisa percorrê-lo, encontrando obstáculos como paredes intransponíveis `#`, itens que podem lhe conceder vidas, bem como perigos que podem tirá-las `*`. O objetivo do jogo é concluir todo o trajeto, escolhendo movimentos ao acaso, de forma a chegar ao final sem perder todas as vidas. Em caso de fracasso, o personagem perde todas as vidas e, consequentemente, o jogo é perdido.
+Trata-se de um jogo inteiramente automático e aleatório. O garoto precisa percorrê-lo, encontrando obstáculos como paredes intransponíveis `#` ou `-1`, itens que podem lhe conceder vidas, bem como perigos que podem tirá-las `*` ou `-9`. O objetivo do jogo é concluir todo o trajeto, escolhendo movimentos ao acaso, de forma a chegar ao final sem perder todas as vidas. Em caso de fracasso, o personagem perde todas as vidas e, consequentemente, o jogo é perdido.
 
 ## Regras
 
@@ -40,7 +40,7 @@ Trata-se de um jogo inteiramente automático e aleatório. O garoto precisa perc
   
 5 - Para caminhar, deve optar de forma aleatória a próxima casa.
 
-6 - Quanto as paredes `#`, não há muito o que fazer a não ser desviar e continuar a rota. 
+6 - Quanto às paredes `#`, não há muito o que fazer a não ser desviar e continuar a rota. 
 
 7 - Já os perigos `*`, a cada passada, tende a subtrair 1 de vida de um total de 10.
 
