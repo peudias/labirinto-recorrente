@@ -62,7 +62,7 @@ Trata-se de um jogo inteiramente automático e aleatório. O garoto precisa perc
 
 15 - Se o player iniciar o jogo em uma parede, automaticamente finaliza o jogo e gera empate.
 
-16 - Caso as matrizes possuam apenas um local disponível e o player está preso neste local entre paredes (spawnou nessa posição), estando impossibilitado de se mover, o player vence.
+16 - Caso as matrizes possuam apenas um local disponível e o player esteja preso neste local entre paredes (spawnou nessa posição), estando impossibilitado de se mover, o player vence.
 
 ## Sobre o Labirinto Recorrente
 
