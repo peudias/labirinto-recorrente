@@ -114,7 +114,7 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 ![victory-sem-consumir](https://user-images.githubusercontent.com/84406892/233811304-39ebb074-a511-44fa-8329-a016799ee2f5.png)
 
-> Neste caso o player entrou em um loop onde não morre mas também não consome itens, então uma regra especial foi criada que, caso chegue a um determinado número x de caminhada, e ainda estando vivo, vence.
+> Neste caso o player entrou em um loop em que não morre, mas também não consome itens, então uma regra especial foi criada que, caso chegue a um determinado número x de caminhada, e ainda esteja vivo, vence.
 
 > O cálculo para encontrar este número está disponível na [linha 136](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L136).
 
