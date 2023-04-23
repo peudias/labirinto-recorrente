@@ -1,27 +1,3 @@
-Questionário:
-
-1. O código pode ser baixado do git? =============================================================== OK!
-
-2. O código executa com matrizes cujo tamanho é ímpar e imprime resultados corretamente? =========== OK!
-
-3. O código executa com matrizes cujo tamanho é par e imprime resultados corretamente? ============= OK!
-
-4. O código está bem estruturado e organizado? ===================================================== OK!
-
-5. O código bem como a entrada seguem os padrões de pasta e nomes definidos? ======================= OK!
-
-.
-
-6. A documentação apresenta uma discussão sobre o problema? ======================================== OK!
-
-7. A documentação apresenta como foi pensado a resolução do problema? ============================== OK!
-
-8. A documentação apresenta pequenos exemplos para explicar o funcionamento? ======================= OK!
-
-9. A documentação apresenta conclusões sobre o trabalho? =========================================== OK!
-
-10. A documentação detalha a forma como o código deve ser compilado? =============================== OK!
-
 # Algoritmo Labirinto Recorrente
 
 <p>
@@ -34,9 +10,9 @@ Questionário:
 
 ## Apresentando o problema
 
-Um garoto se encontra perdido em um labirinto, o qual é compreendido por nós como sendo uma matriz cujas posição de sua localização é dada por um valor [x][y] dessa estrutura.
+Um garoto se encontra perdido em um labirinto, o qual é compreendido por nós como sendo uma matriz cujas posição de sua localização é dada por um valor x,y dessa estrutura.
 
-Nesse labirinto há paredes que bloqueiam certos passos `#`, perigos que consomem parte de sua vida `*` e `trajetórias` (valores positivos que devem ser subtraídos em 1 a cada passagem).
+Trata-se de um jogo inteiramente automático e aleatório. O garoto precisa percorrê-lo, encontrando obstáculos como paredes intransponíveis `#`, itens que podem lhe conceder vidas, bem como perigos que podem tirá-las `*`. O objetivo do jogo é concluir todo o trajeto, escolhendo movimentos ao acaso, de forma a chegar ao final sem perder todas as vidas. Em caso de fracasso, o personagem perde todas as vidas e, consequentemente, o jogo é perdido.
 
 ## Regras
 
