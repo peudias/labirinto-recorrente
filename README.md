@@ -310,7 +310,7 @@ Sobre o custo computacional, é difícil dar um resultado com precisão, visto q
 
 Por outro lado, no código foram utilizados meios para tentar minimizar o custo, como por exmeplo nas funções `lerCheckpoint` e `lerBinario`, que, como já foi explicado na seção sobre os códigos, por sempre estar alternando entre matrizes, manter todas elas em RAM pode acabar sendo bastante custoso, e dessa forma se fez necessário utilizar arquivos individuais para minimizar o impacto.
 
-Vale ainda destacar que o percurso "escolhido" (que é de forma aleatória) pelo player pode afetar o custo computacional, uma vez que, caso o mesmo ande por todas as casas até zerar a matriz, terá um custo maior do que caso consiga finalizar sem precisar percorrer todas as posições.
+Vale ainda destacar que o percurso "escolhido" (que é de forma aleatória) pelo player pode afetar o custo computacional, uma vez que, caso o jogador ande por todas as casas até zerar a matriz, terá um custo maior do que caso consiga finalizar sem precisar percorrer todas as posições.
 
 
 
