@@ -134,9 +134,9 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 ![tie-game](https://user-images.githubusercontent.com/84406892/233811317-263943b9-9d3a-4d8d-a6ae-51b5d4f45472.png)
 
-> Esta é uma regra especial onde, se o player iniciar em uma parede, automaticamente finaliza o jogo.
+> Esta é uma regra especial em que, se o player iniciar em uma parede, automaticamente finaliza o jogo.
 
-> Uma vez que ainda estará com sua vida total mas não conseguiu vencer por outros meios, declarei como empate.
+> Uma vez que ainda estará com sua vida total mas não conseguiu vencer por outros meios, é declarado como empate.
 
 ### Arquivo output.data
 
