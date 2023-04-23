@@ -122,7 +122,7 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 ![victory-3](https://user-images.githubusercontent.com/84406892/233811310-f0dbc8df-bc58-458f-a986-f27f6c460647.png)
 
-> Neste caso, a matriz possui apenas um local disponível e o player está preso neste local entre paredes, logo não consegue se mover.
+> Neste caso, a matriz possui apenas um local disponível e o player está preso neste local entre paredes, logo não consegue se mover, mas também não está com a vida zerada.
 
 #### WASTED! - Player morreu.
 
