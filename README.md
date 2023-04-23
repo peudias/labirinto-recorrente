@@ -44,7 +44,7 @@ Trata-se de um jogo inteiramente automático e aleatório. O garoto precisa perc
 
 7 - Já os perigos `*`, a cada passada, tende a subtrair 1 de vida de um total de 10. Assim, ao ficar sem pontos de vida o algoritmo deve parar e indicar fim de jogo.
 
-8 - Ao alcançar a primeira ou última coluna da matriz, o player irá se teletransportar aleatoriamente para uma outra matriz, e repete todo o processo novamente. 
+8 - Ao alcançar a primeira ou última linha da matriz, o player irá se teletransportar aleatoriamente para uma outra matriz, e repete todo o processo novamente. 
 
 9 - Ao ficar sem pontos de vida, o algoritmo deve parar e indicar o fim de jogo.
 
