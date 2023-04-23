@@ -20,7 +20,7 @@ Questionário:
 
 9. A documentação apresenta conclusões sobre o trabalho?
 
-10. A documentação detalha a forma como o código deve ser compilado?
+10. A documentação detalha a forma como o código deve ser compilado? =============================== OK!
 
 # Algoritmo Labirinto Recorrente
 
@@ -176,7 +176,7 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 > Função localizada na [linha 91](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L91). 
 
-> Esta é uma função para o processo de checar se a matriz está zerada.
+> Esta é uma função para o processo de checar se a matriz está zerada, ou seja, se os valores disponíveis para trajetória estão em zero.
 
 3. int qtdVisita(auxMatriz *m, int check);
 
@@ -273,6 +273,20 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 > Esta é uma função para a criação do relatório pós rodada do jogo. 
 
 > Responsável por mostrar informações como: Quantidade de cadas diferentes visitadas e não visitadas, soma total dos itens consumidos, quantos perigos foram enfrentados, quantidade de vida do player e seu status.
+
+### Arquivos .h
+
+No geral contêm declarações de funções, variáveis, constantes e outras definições que são compartilhadas entre diferentes arquivos do código, mas abaixo, detalhes de um arquivo em específico.
+
+### Arquivo [const.h](https://github.com/phpdias/labirinto-recorrente/blob/main/src/include/const.h). 
+
+> Nesse arquivo possui os `#define` de:
+
+> PAREDE, representado por `-1`.
+
+> PERIGOS, representado por `-9`.
+
+> Algumas outras definições, como por exemplo `visitado` e `não visitado`, para auxiliar na contagem, e também algumas definições de `cores`, para melhorar a impressão do resultado no console.
 
 ## Conclusão
 
