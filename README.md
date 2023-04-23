@@ -260,6 +260,8 @@ Alguns exemplos são: quantidade de `casas visitadas` e `não visitadas`, soma t
 
 > Mesma lógica da função checkpoint();
 
+> Diferença que trabalha no arquivo com a matriz binária, que utiliza apenas `0` e `1`.
+
 9. void logs(matrizinput *m, int x, int y);
 
 > Função localizada na [linha 232](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L232).
