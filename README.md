@@ -12,9 +12,9 @@ Questionário:
 
 .
 
-6. A documentação apresenta uma discussão sobre o problema?
+6. A documentação apresenta uma discussão sobre o problema? ======================================== OK!
 
-7. A documentação apresenta como foi pensado a resolução do problema?
+7. A documentação apresenta como foi pensado a resolução do problema? ============================== OK!
 
 8. A documentação apresenta pequenos exemplos para explicar o funcionamento?
 
@@ -70,6 +70,12 @@ Nesse labirinto há paredes que bloqueiam certos passos `#`, perigos que consome
 
 8 - Ao alcançar a primeira ou última coluna da matriz, o player irá se teletransportar aleatoriamente para uma outra matriz, e repete todo o processo novamente. 
 
+## Regras Especiais
+
+9 - 
+
+10 - 
+
 ## Sobre o Labirinto Recorrente
 
 ### Resolução do problema
@@ -106,7 +112,7 @@ Observe que existe um padrão nas impressões.
 
 Primeiro é impresso uma palavra que indica se o player permaneceu vivo `VICTORY!`, se morreu `WASTED!`, ou se empatou `TIE GAME!`.
 
-Em seguida é mostrado uma breve frase que indica o motivo do encerramento do game, e logo abaixo uma mensagem confirmnando que o jogo foi finalizado.
+Em seguida é mostrado uma breve frase que indica o motivo do encerramento do game, e logo abaixo uma mensagem confirmando que o jogo foi finalizado.
 
 Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada.
 
@@ -114,13 +120,13 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 ![victory-normal](https://user-images.githubusercontent.com/84406892/233811289-662cc367-e0c0-4d3f-8ff2-6430d854131d.png)
 
- > Neste caso o player caminhou o suficiente para conseguir zerar toda a trajetória sem zerar a vida, ou seja, morrer (Que sorte!).  
+ > Neste caso o player caminhou o suficiente para conseguir zerar toda a trajetória sem zerar a vida, ou seja, sem morrer (Que sorte!).  
 
 #### VICTORY! - Sem consumir itens.
 
 ![victory-sem-consumir](https://user-images.githubusercontent.com/84406892/233811304-39ebb074-a511-44fa-8329-a016799ee2f5.png)
 
-> Neste caso o player entrou em um loop onde não morre mas também não consome itens, então a regra criada foi que, caso chegue a um determinado número x de caminhada, e ainda estando vivo, vence.
+> Neste caso o player entrou em um loop onde não morre mas também não consome itens, então uma regra especial foi criada que, caso chegue a um determinado número x de caminhada, e ainda estando vivo, vence.
 
 > O cálculo para encontrar este número está disponível na [linha 136](https://github.com/phpdias/labirinto-recorrente/blob/main/src/labirinto.c#L136).
 
@@ -154,7 +160,7 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 > Função localizada na [linha 3](https://github.com/phpdias/labirinto-recorrente/blob/main/src/util.c#L3).
 
-> Esta é uma função que utilizei para o processo de criação do algoritmo. Serve apenas para pintar as paredes de azul e os inimigos de vermelho. 
+> Esta é uma função que foi utilizada para o processo de criação do algoritmo. Serve apenas para pintar as paredes de azul e os inimigos de vermelho. 
 
 > Não é uma função que aparece para o usuário final. Foi utilizada apenas no processo de desenvolvimento.
 
@@ -192,9 +198,17 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 > Função localizada na [linha 3](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L3). 
 
+> Por sempre estar alternando entre matrizes, manter todas elas em RAM pode ser custoso, logo se fez necessário utilizar arquivos para manter o último checkpoint de modificação da matriz.
+
+> Sempre que utiliza-se do teletransporte, é feito o salvamento da matriz atual para pegar ela novamente quando precisar.
+
 2. void lerBinario(auxMatriz *aux);
 
 > Função localizada na [linha 40](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L40). 
+
+> Mesma lógica do lerCheckpoint(); 
+
+> Difere apenas que é a matriz que guarda se passou ou não pelo caminho.
 
 3. void lerArquivo(matrizinput *m, auxMatriz *aux);
 
@@ -218,14 +232,23 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 
 > Função localizada na [linha 165](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L165). 
 
+> Faz alocação dinâmica para trabalhar com a matriz.
+
+> Inicializa os valores.
+
 7. void checkpoint(matrizinput *m);
 
 > Função localizada na [linha 188](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L188). 
+
+> Faz salvamento da matriz buscar a mesma quando precisar.
+
+> Essa função cria a matriz que é lida no lerCheckpoint();
 
 8. void checkpoint_binaria(auxMatriz *aux);
 
 > Função localizada na [linha 210](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L210).
 
+> Mesma lógica da função checkpoint();
 
 9. void logs(matrizinput *m, int x, int y);
 
@@ -239,6 +262,8 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 10. void LidoNaoLido(int N, int *naoVisita, int *visita);
 
 > Função localizada na [linha 266](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L266).
+
+> Função para verificar na matriz binária quem é 0 ou 1.
 
 
 11. void createRelatorio(Player *p);
