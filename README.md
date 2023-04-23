@@ -16,9 +16,9 @@ Questionário:
 
 7. A documentação apresenta como foi pensado a resolução do problema? ============================== OK!
 
-8. A documentação apresenta pequenos exemplos para explicar o funcionamento?
+8. A documentação apresenta pequenos exemplos para explicar o funcionamento? ======================= OK!
 
-9. A documentação apresenta conclusões sobre o trabalho?
+9. A documentação apresenta conclusões sobre o trabalho? =========================================== OK!
 
 10. A documentação detalha a forma como o código deve ser compilado? =============================== OK!
 
@@ -70,11 +70,23 @@ Nesse labirinto há paredes que bloqueiam certos passos `#`, perigos que consome
 
 8 - Ao alcançar a primeira ou última coluna da matriz, o player irá se teletransportar aleatoriamente para uma outra matriz, e repete todo o processo novamente. 
 
+9 - Ao ficar sem pontos de vida, o algoritmo deve parar e indicar o fim de jogo.
+
+10 - Ao decorrer do jogo, a cada passo correto sob uma estrada, o player consome um item, subtraindo esse do valor que compõe a posição x,y. 
+
+11 - A cada subtração bem sucedida, essa vai para um banco de vida que quando cheio (a cada 4 ações bem sucedidas) lhe retorna 1 de vida em seu contador. Contudo, pode haver partes do caminho com zero itens, esses devem continuar sendo utilizados, porém, sem computar pontuação.
+
+12 - Sua missão é percorrer as matrizes até que todo o caminho percorrido pelo garoto se torne zero ou que ele venha a morrer devido aos perigos enfrentados.
+
+13 - O player inicia a jornada com zero itens e com vida máxima (10).
+
 ## Regras Especiais
 
-9 - 
+13 - Caso o player chegue a um determinado número x de caminhada, e ainda esteja vivo, vence.
 
-10 - 
+14 - Se o player iniciar o jogo em uma parede, automaticamente finaliza o jogo e gera empate.
+
+15 - Caso as matrizes possuam apenas um local disponível e o player está preso neste local entre paredes (spawnou nessa posição), estando impossibilitado de se mover, o player vence.
 
 ## Sobre o Labirinto Recorrente
 
@@ -92,7 +104,7 @@ Analogamente, também pode ser digitado manualmente pelo usuário, mas não é o
 
 Para exemplificar, utilizarei o seguinte arquivo `input.data`, gerado por mim através do repositório citado acima.
 
-#### Arquivo input.data
+### Arquivo input.data
 
 No exemplo a seguir, estão as informações sobre o tamanho da matriz e quantas matrizes serão analisadas neste programa.
 
@@ -149,6 +161,28 @@ Por fim, uma frase que indica onde o usuário poderá ver o relatório da rodada
 > Esta é uma regra especial onde, se o player iniciar em uma parede, automaticamente finaliza o jogo.
 
 > Uma vez que ainda estará com sua vida total mas não conseguiu vencer por outros meios, declarei como empate.
+
+### Arquivo output.data
+
+Este arquivo é onde a função logs() faz seu trabalho. 
+
+É um arquivo onde mostra exatamente por onde o player passou (indicado por `>X<`), além de também mostrar o mapa do jogo, incluindo onde estão os inimigos (`-9`) e as paredes (`-1`).
+
+Utilizando como exemplo o `input.data` acima, onde possui seis Matrizes 8x8, obteve-se o seguinte resultado:
+
+![output](https://user-images.githubusercontent.com/84406892/233817051-cc35f960-f7f0-46d7-bb69-ab763d469944.png)
+
+Note na parte direita da imagem que o arquivo pode ser bem extenso dependendo do volume de dados a serem processados e caminho percorrido pelo jogador.
+
+### Arquivo relatorio.data
+
+Este arquivo é onde a função createRelatorio() faz seu trabalho.
+
+É um arquivo que mostra informações mais detalhdas sobre a jornada do player durante a execução do programa.
+
+Alguns exemplos são: quantidade de `casas visitadas` e `não visitadas`, soma total dos `itens consumidos`, quantidade de `perigos enfrentados`, quantidade de `vida e status` do player.
+
+![relatorio.data](https://user-images.githubusercontent.com/84406892/233817243-84adac74-f240-4862-a97e-fd1d469e8c79.png)
 
 ### Explicando um pouco sobre o código
 
@@ -289,6 +323,18 @@ No geral contêm declarações de funções, variáveis, constantes e outras def
 > Algumas outras definições, como por exemplo `visitado` e `não visitado`, para auxiliar na contagem, e também algumas definições de `cores`, para melhorar a impressão do resultado no console.
 
 ## Conclusão
+
+Sobre o game em si, é notório que é muito difícil que o player permaneça vivo, sobretudo em matrizes quadráticas cada vez maiores e em maior quantidade.
+
+Contudo com regras especiais criadas, existem meios que facilitam a vitória do player em sua jornada.
+
+Sobre o custo computacional, é difícil dar um resultado com precisão, visto que o custo pode variar imensamente devido ao volume de dados. Quanto maior for a quantidade de matrizes e também a quantidade de linhas x coluna, maior será o custo.
+
+Por outro lado, no código foram utilizados meios para tentar minimizar o custo, como por exmeplo nas funções `lerCheckpoint` e `lerBinario`, que, como já foi explicado na seção sobre os códigos, por sempre estar alternando entre matrizes, manter todas elas em RAM pode acabar sendo bastante custoso, e dessa forma se fez necessário utilizar arquivos individuais para minimizar o impacto.
+
+Vale ainda destacar que o percurso "escolhido" (que é de forma aleatória) pelo player pode afetar o custo computacional, uma vez que, caso o mesmo ande por todas as casas até zerar a matriz, terá um custo maior do que caso consiga finalizar sem precisar percorrer todas as posições.
+
+
 
 ## Compilação e Execução
 
