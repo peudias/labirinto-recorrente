@@ -42,7 +42,7 @@ Trata-se de um jogo inteiramente automático e aleatório. O garoto precisa perc
 
 6 - Quanto as paredes `#`, não há muito o que fazer a não ser desviar e continuar a rota. 
 
-7 - Já os perigos `*`, a cada passada, tende a subtrair 1 de vida de um total de 10. Assim, ao ficar sem pontos de vida o algoritmo deve parar e indicar fim de jogo.
+7 - Já os perigos `*`, a cada passada, tende a subtrair 1 de vida de um total de 10.
 
 8 - Ao alcançar a primeira ou última linha da matriz, o player irá se teletransportar aleatoriamente para uma outra matriz, e repete todo o processo novamente. 
 
