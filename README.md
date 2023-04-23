@@ -275,7 +275,7 @@ Alguns exemplos são: quantidade de `casas visitadas` e `não visitadas`, soma t
 
 > Função localizada na [linha 266](https://github.com/phpdias/labirinto-recorrente/blob/main/src/arquivo.c#L266).
 
-> Função para verificar na matriz binária quem é 0 ou 1.
+> Função para verificar na matriz binária quais posições são 0 ou 1.
 
 
 11. void createRelatorio(Player *p);
