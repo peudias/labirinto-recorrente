@@ -154,7 +154,7 @@ Note na parte direita da imagem que o arquivo pode ser bem extenso dependendo do
 
 Este arquivo é onde a função createRelatorio() faz seu trabalho.
 
-É um arquivo que mostra informações mais detalhdas sobre a jornada do player durante a execução do programa.
+É um arquivo que mostra informações mais detalhadas sobre a jornada do player durante a execução do programa.
 
 Alguns exemplos são: quantidade de `casas visitadas` e `não visitadas`, soma total dos `itens consumidos`, quantidade de `perigos enfrentados`, quantidade de `vida e status` do player.
 
